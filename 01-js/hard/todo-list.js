@@ -11,6 +11,40 @@
 */
 
 class Todo {
+constructor(){
+ this.arr=[];
+}
+add(todo){
+this.arr.push(todo);
+}
+remove(i){
+this.arr.splice(i,1);
+}
+update(i,todo){
+  if(i>= this.arr.length){
+    console.error("Index out of bounds");
+
+  }
+  else{
+    this.arr[i]=todo;
+  }
+  
+}
+getAll(){
+  return this.arr;
+}
+get(i){
+  if(i>=this.arr.length){
+    return null;
+  }
+  else{
+    return this.arr[i];
+  }
+  
+}
+clear(){
+this.arr=[];
+}
 
 }
 

@@ -5,6 +5,14 @@
  */
 
 function sleep(milliseconds) {
+    const promise = new Promise((resolve,reject)=>{
+        setTimeout(resolve,milliseconds)
+    })
+    return promise;
 }
+sleep(4).then(()=>{
+    console.log("After halting for 2000 milliseconds");
+})
+
 
 module.exports = sleep;
