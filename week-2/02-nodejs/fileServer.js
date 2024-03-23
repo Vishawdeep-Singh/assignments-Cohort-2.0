@@ -12,10 +12,50 @@
     - For any other route not defined in the server return 404
     Testing the server - run `npm run test-fileServer` command in terminal
  */
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const app = express();
+    const express = require('express');
+    const fs = require('fs');
+    const path = require('path');
+    const app = express();
+    const port = 3000;
+ 
+    
+    app.get('/files', (req, res) => {
+        const filePath = path.join(__dirname, 'files');
+        fs.readdir(filePath, (err, files) => {
+            if (err) {
+                res.status(500).send('Internal Server Error');
+            } else {
+                res.json(files);
+            }
+        });
+    });
+    
+    app.get('/file/:filename', (req, res) => {
+        let filename = req.params.filename;
+        const filepath = path.join(__dirname, './files', `${filename}`);
+        fs.readFile(filepath, "utf8", (err, fileContent) => {
+          
+            if (err) {
+                res.status(404).send("File not found");
+            } else {
+              
+                res.send(fileContent);
+            }
 
+        });
+    });
+    app.use((req, res) => {
+      res.status(404).send('Route not found');
+  });
+  
+
+//   When a request comes in, Express.js will try to match the request URL against all defined routes in the order they were added.
+// If the request URL doesn't match any of the defined routes, Express.js will reach this middleware because it's defined at the end of the middleware stack.
+// Since this middleware doesn't have a route path specified, it will match all requests that haven't been handled by other routes.
+// It then sets the HTTP status code to 404 using res.status(404), indicating that the requested resource was not found.
+// Finally, it sends the string '404 Not Found' as the response body using res.send().
+// This middleware ensures that any request that doesn't match a specific route will receive a 404 Not Found response, indicating that the requested resource is not available on the server.
+    
+    
 
 module.exports = app;
