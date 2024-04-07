@@ -7,16 +7,51 @@
     let todoState = [];
     let oldTodoState = [];
 
-    function addTodoToDom() {
-      
+    function addTodoToDom(title,description,id) {
+  //     const child = document.createElement("div");
+  // const firstGrandParent = document.createElement("div");
+  // firstGrandParent.innerHTML = title;
+  // const secondGrandParent = document.createElement("div");
+  // secondGrandParent.innerHTML = description;
+  // const thirdGrandParent = document.createElement("button");
+  // thirdGrandParent.innerHTML = "Mark as done";
+  // thirdGrandParent.setAttribute("onclick", `markAsDone(${id})`);
+  // child.appendChild(firstGrandParent);
+  // child.appendChild(secondGrandParent);
+  // child.appendChild(thirdGrandParent)
+  // child.setAttribute("id", id);
+  const todosContainer = document.getElementById("todos");
+  
+  const todoItem = document.createElement("div");
+  todoItem.setAttribute("id", id);
+
+  const titleElement = document.createElement("div");
+  titleElement.innerHTML = title;
+  todoItem.appendChild(titleElement);
+
+  const descriptionElement = document.createElement("div");
+  descriptionElement.innerHTML = description;
+  todoItem.appendChild(descriptionElement);
+
+  const button = document.createElement("button");
+  button.innerHTML = "Mark as done";
+  button.setAttribute("onclick", `markAsDone(${id})`);
+  todoItem.appendChild(button);
+
+  todosContainer.appendChild(todoItem);
+  
     }
 
     function removeTodoFromDom(todo) {
-      
+      const element = document.getElementById(todo.id);
+      element.parentNode.removeChild(element);
     }
 
     function updateTodoInDom(oldTodo, newTodo) {
-        
+        const element = document.getElementById(oldTodo.id);
+        element.children[1].innerHTML = newTodo.title;
+        element.children[2].innerHTML = newTodo.description;
+        element.children[3].innerHTML= newTodo.completed ? "Mark as done" : "Done";
     }
 
     function updateState(newTodos) {
@@ -25,25 +60,72 @@
       // 1. added
       // 2. deleted
       // 3. updated
-      const added = [];
-      const deleted = [];
-      const updated = [];
+      let added = [];
+      let deleted = [];
+      let updated = [];
+
+      newTodos.forEach((element)=>{
+        const idx = oldTodoState.findIndex((e)=>{
+         return e.id == element.id &&
+              e.title == element.title &&
+              e.description == element.description &&
+              e.completed == element.completed
+        });
+        console.log(idx);
+
+        if(idx>=0){
+          oldTodoState.splice(idx,1);
+        }
+        else{
+          const index = oldTodoState.findIndex((e)=>{
+          return  e.id==element.id;
+          });
+            if(index>=0){
+              updated.push(element);
+              updateTodoInDom(oldTodoState[index], element);
+
+              oldTodoState.splice(index,1);
+
+            }
+
+            else{
+              added.push(element);
+              addTodoToDom(element.title,element.description,element.id);
+            }
+          }
+      });
+      
       // calculate these 3 arrays
       // call addTodo, removeTodo, updateTodo functions on each of the
       // elements
+      deleted = oldTodoState;
+        deleted.forEach((todo) => {
+          removeTodoFromDom(todo);
+        });
+        console.log(added);
+        console.log(deleted);
+        console.log(updated);
       oldTodoState = newTodos;
+
     }
 
-    function addTodo() {
-      const title = document.getElementById("title").value;
-      const description = document.getElementById("description").value;
-      todoState.push({
-        title: title,
-        description: description,
-        id: globalId++,
-      })
-      updateState(todoState);
+    async function addTodo() {
+      const result = await fetch("https://sum-server.100xdevs.com/todos");
+       const res = await result.json();
+       todoState=res.todos
+       console.log(res);
+   
+        updateState(todoState);
+      // const title = document.getElementById("title").value;
+      // const description = document.getElementById("description").value;
+      // todoState.push({
+      //   title: title,
+      //   description: description,
+      //   id: globalId++,
+      // })
+     
     }
+   
   </script>
 </head>
 
