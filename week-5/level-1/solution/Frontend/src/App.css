@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+#root{
+  display: flex;
+  justify-content: center;
+ 
+background-color: bisque;
+}
+
+
+.card h4 {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  
+}
+.card h3{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  /* margin: 0; */
+}
+.whole{
+  border: 1px solid rgb(146, 144, 144);
+  margin: 1.5rem;
+  border-radius: 1rem;
+  width: auto;
+  background-color:aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+ 
+}
+.whole:hover{
+  box-shadow: 20px 20px 20px rgba(88, 88, 88, 0.1);
+  transform: scale(1.02);
+}
+
+.interest ul  {
+  margin-top: -0.5rem;
+  list-style-type: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin-left: -2.5rem;
+  font-size: 14px;
+}
+.linkedin-button
+ {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #0077B5;
+  transition: background-color 0.3s, color 0.3s;
+}
+.x-button{
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  margin-left: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.linkedin-button:hover {
+  background-color: #006097;
+  color: white;
+}
+.container{
+  margin: 1.5rem;
+  
+}
+
+
+
+
+form {
+  width: 300px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+label {
+  display: block; /* Each label on a new line */
+  margin-bottom: 10px; /* Add some space between labels */
+}
+
+input[type="text"],
+textarea {
+  width: 100%; /* Make text inputs and textareas fill their container */
+  padding: 8px; /* Add some padding for better appearance */
+  margin-bottom: 10px; /* Add some space between inputs */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Add some border radius for rounded corners */
+  box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+button {
+  padding: 10px 20px; /* Add padding to the button */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Add pointer cursor */
+  margin: 0.5rem;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+
+h1 {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #333; /* Text color */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
