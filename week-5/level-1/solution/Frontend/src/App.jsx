@@ -71,6 +71,7 @@ function InputCard({ onAddcard }) {
 
 
       onAddcard(response.data)
+      console.log(response.data);
       setName('');
       setDescription('');
       setInterests([]);

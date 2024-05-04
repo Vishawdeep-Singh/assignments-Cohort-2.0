@@ -12,13 +12,24 @@ export const Assignment3 = () => {
     ]);
 
     // Your code starts here
-    const totalValue = 0;
+    const totalValue= useMemo(()=>{
+        let total=0;
+        for(let i=0;i<items.length;i++){
+            total += items[i].value;
+        }
+        return total;
+    },[items])
+  
     // Your code ends here
     return (
         <div>
             <ul>
                 {items.map((item, index) => (
-                    <li key={index}>{item.name} - Price: ${item.value}</li>
+                      <li key={index}>{item.name} - Price: ${item.value}</li> // es, that's correct! The map() function returns an array where each element corresponds to the result of applying the provided function to each element of the original array.
+
+                      // In your case, the provided function generates a <li> element for each item in the items array. So, the array returned by map() consists of <li> elements, with each <li> element representing an item in the items array.
+                      
+                      // Therefore, the resulting array is indeed an array of <li> elements. This array of <li> elements is then rendered within the <ul> element in your JSX code.
                 ))}
             </ul>
             <p>Total Value: {totalValue}</p>
