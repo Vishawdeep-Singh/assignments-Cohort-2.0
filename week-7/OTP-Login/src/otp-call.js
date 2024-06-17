@@ -17,8 +17,8 @@ app.use(cors())
 
 // Twilio client setup
 
-const accountSid = 'AC1bd8bab718d255aeb6a8b340be478d1f';
-const authToken = 'e4f95cc70aec291b0d67e247d9d937bf';
+const accountSid="";
+const authToken="" ;
 
 
 
