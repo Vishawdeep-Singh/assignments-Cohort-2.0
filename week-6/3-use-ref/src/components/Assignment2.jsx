@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 
 export function Assignment2() {
     const [render, forceRender] = useState(0);
-    const numberoftimes = useRef(0);
+    const numberoftimes = useRef(0); // It initilizes when components mounts , and on every rerender of app  it does not initialize back to 0
 
     const handleReRender = () => {
         // Update state to force re-render

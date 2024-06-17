@@ -1,0 +1,83 @@
+/* App.css */
+
+/* Container styles (already defined) */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+/* Generator Box styles (already defined) */
+.GeneratorBox {
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.584);
+background-color: aliceblue;
+
+}
+.GeneratorBox button{
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #071b71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+
+/* OTP verification box and input styles */
+.OTP-verify {
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 3rem;
+ 
+ background-color: #0056b3;
+ box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.409);
+ 
+  
+}
+
+/* Styling for number input */
+.GeneratorBox input[type="number"] {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* OTP input styles */
+.OTP-verify input[type="text"] {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styles (already defined) */
+.OTP-verify button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #071b71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.OTP-verify button:hover {
+  background-color: #000f1f;
+}

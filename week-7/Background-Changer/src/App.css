@@ -1,0 +1,52 @@
+.palette{
+  display: flex;
+  justify-content: space-evenly;
+border: 2px solid black;
+border-radius: 1rem;
+padding: 1rem;
+box-shadow: 10px 10px black;
+
+}
+.palette button{
+  border: 2px solid black;
+
+border-radius: 1rem;
+padding: 0.5rem;
+}
+.container{
+  position: absolute;
+  bottom: 100px;
+  width: 50%;
+  z-index: 1000;
+  
+ 
+ 
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.palette>button:first-child{
+  background-color: red;
+}
+.palette>button:nth-child(2){
+  background-color: yellow;
+}
+.palette>button:nth-child(3){
+  background-color: black;
+  color: white;
+}
+.palette>button:nth-child(4){
+  background-color: purple;
+}
+.palette>button:nth-child(5){
+  background-color: green;
+}
+.palette>button:nth-child(6){
+  background-color: blue;
+}
+.palette>button:nth-child(7){
+  background-color: orangered;
+}

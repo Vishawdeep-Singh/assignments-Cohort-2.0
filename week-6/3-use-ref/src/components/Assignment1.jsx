@@ -12,6 +12,7 @@ const inputref = useRef();
 
     const handleButtonClick = () => {
         // console.log(inputref)
+       console.dir(inputref.current);
         inputref.current.focus()
     };
 

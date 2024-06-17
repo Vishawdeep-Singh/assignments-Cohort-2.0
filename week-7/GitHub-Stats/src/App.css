@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 300px;
+}
+
+input[type="text"]:focus {
+  border-color: #646cff; /* Change border color on focus */
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #646cff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #5245cc; /* Darker shade on hover */
+}
+
+
+.loader {
+  display: inline-block;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  border-top: 6px solid #646cff;
+  width: 32px;
+  height: 32px;
+  animation: spin 1s linear infinite;
+  margin-left: 8px;
+  margin-top: 40px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.back-style{
+  height: 100px;
+  width: 300px;
+  background-color: rgb(252, 134, 0);
+  z-index: -10;
+  margin-left: -1.2rem;
+  margin-top: -1.3rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+  margin-top: -70px;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative; /* Ensure stacking context for pseudo-element */
+}
+
+
+
+.avatar img:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.name {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.name p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.name p:last-child {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.bio {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bio p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.474);
+  border-radius: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(251, 243, 235);
+  z-index: 100;
+}
+
+.profile-info .followers,
+.profile-info .following,
+.profile-info .Repos {
+  text-align: center;
+}
+
+.profile-info .followers p,
+.profile-info .following p,
+.profile-info .Repos p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.profile-info .followers p:last-child,
+.profile-info .following p:last-child,
+.profile-info .Repos p:last-child {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: -5px;
+}

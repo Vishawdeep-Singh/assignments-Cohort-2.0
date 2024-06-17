@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+
+*{
+  font-family: "Roboto", sans-serif;
+  
+}
+#root{
+  display: flex;
+  justify-content: center;
+}
+.container{
+
+ width: 20%;
+
+ display: flex;
+ flex-direction: column;
+
+ border: 2px solid black;
+ 
+}
+.profile-pic{
+  z-index: 1;
+  margin-top: -50px;
+  position: relative;
+  text-align: center;
+}
+.pic{
+  height: 100px;
+  width: 100px;
+ 
+}
+span,.country{
+  font-weight: 300;
+  font-style: normal;
+}
+.country{
+  margin-top: -1rem;
+}
+.name{
+  font-weight: 900;
+  font-style: normal;
+}
+.desc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.profile-info{
+  display: flex;
+  justify-content: space-evenly;
+}
+.followers,.likes,.photos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+.followers>p:first-child,.likes>p:first-child,.photos>p:first-child{
+  font-weight: 900;
+  font-style: normal;
+}
+.followers>p:nth-child(2),.likes>p:nth-child(2),.photos>p:nth-child(2){
+  margin-top: -1rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-style: normal;
+}
+hr{
+  width: 90%;
+}
+.back-style{
+  height: 100px;
+  width: 100%;
+  background-color: aquamarine;
+  z-index: -1;
+}
